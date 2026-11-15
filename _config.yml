@@ -1,0 +1,81 @@
+title: OCamleer
+description: "An Armenian-language blog about OCaml, covering core concepts, history, and interesting aspects of the language"
+url: "https://vontanne.github.io"
+baseurl: "/ocamleer"
+repository: "vontanne/ocamleer"
+locale: "hy-AM"
+timezone: "Asia/Yerevan"
+
+author:
+  name: "Hovhannes Hovhannisyan"
+
+twitter:
+  username: "vontanne"
+
+theme: minimal-mistakes-jekyll
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: /posts/:title/
+
+search: true
+search_full_content: true
+
+tag_archive:
+  type: liquid
+  path: /tags/
+
+footer:
+  since: "2026"
+  links:
+    - label: "X"
+      icon: "fab fa-fw fa-x-twitter"
+      url: "https://x.com/vontanne"
+
+atom_feed:
+  hide: true
+
+copyright_url: "https://vontanne.github.io/ocamleer/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-readme-index
+  - jekyll-relative-links
+  - jekyll-sitemap
+
+readme_index:
+  remove_originals: true
+
+relative_links:
+  enabled: true
+  collections: true
+
+include:
+  - _pages
+
+exclude:
+  - LICENSE
+  - vendor/
+
+sass:
+  style: compressed
+  quiet_deps: true
+  silence_deprecations: ["import"]
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      author_profile: false
+  - scope:
+      path: ""
+      type: posts
+    values:
+      share: true
+      related: true
+      read_time: true
+      show_date: true
