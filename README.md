@@ -21,3 +21,4 @@ I hope these publications help you discover OCaml and explore new ways of thinki
 ## Publications / Հրապարակումներ
 
 1. [**OCaml․ Ներածություն**](./posts/ocaml-introduction/index.md)
+2. [**OCaml աշխատանքային միջավայրի տեղադրումն ու կարգավորումը**](./posts/ocaml-development-environment/index.md)
