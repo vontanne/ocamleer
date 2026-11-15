@@ -1,0 +1,266 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+/* ==========================================================================
+   Colors: dark theme palette
+   ========================================================================== */
+
+$color-background: #212737;
+$color-foreground: #eaedf3;
+$color-accent: #ff6b01;
+$color-accent-foreground: #ffffff;
+$color-muted: #343f60;
+$color-muted-foreground: #afb9ca;
+$color-border: #ab4b08;
+
+/* Minimal Mistakes skin variables */
+$background-color: $color-background;
+$text-color: $color-foreground;
+$muted-text-color: $color-muted-foreground;
+$primary-color: $color-accent;
+$border-color: $color-border;
+$code-background-color: #2f3956; // $color-muted at 75% opacity over $color-background
+$code-background-color-dark: $code-background-color;
+$form-background-color: $code-background-color;
+$footer-background-color: $color-background;
+$link-color: $color-accent;
+$link-color-hover: $color-accent;
+$link-color-visited: $color-accent;
+$masthead-link-color: $color-foreground;
+$masthead-link-color-hover: $color-accent;
+$navicon-link-color-hover: $color-accent;
+
+/* Fonts: Noto Sans for Latin text, Noto Sans Armenian for Armenian text */
+$sans-serif: "Noto Sans", "Noto Sans Armenian", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+$monospace: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+
+/* Code blocks: Night Owl colors */
+$base00: #011627; // background
+$base01: #0b2942;
+$base02: #1d3b53;
+$base03: #4b6479;
+$base04: #637777; // comments, line numbers
+$base05: #d6deeb; // default text
+$base06: #1d3b53; // highlighted line background
+$base07: #ffffff;
+$base08: #c5e478; // variables
+$base09: #f78c6c; // numbers, constants
+$base0a: #ffcb8b; // types, classes
+$base0b: #ecc48d; // strings
+$base0c: #7fdbca; // operators, tags
+$base0d: #82aaff; // functions
+$base0e: #c792ea; // keywords
+$base0f: #ff5874;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* Links: thin solid underline in a softer text color; text and line turn orange on hover */
+@mixin link-underline {
+  text-decoration: underline;
+  text-decoration-color: rgba($color-foreground, 0.5);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-accent;
+    text-decoration: underline;
+    text-decoration-color: $color-accent;
+  }
+}
+
+/* ==========================================================================
+   Layout: one centered column without a sidebar
+   ========================================================================== */
+
+$content-max-width: 42rem;
+
+.page,
+.archive {
+  @include breakpoint($large) {
+    float: none;
+    width: 100%;
+    max-width: $content-max-width;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+}
+
+/* Related articles: same column, shown as a full-width list */
+.page__related {
+  float: none;
+  width: 100%;
+
+  @include breakpoint($large) {
+    width: 100%;
+    max-width: $content-max-width;
+    margin-inline: auto;
+  }
+
+  .grid__item {
+    float: none;
+    width: 100%;
+    margin-inline: 0;
+  }
+}
+
+/* Header, footer, and search aligned with the content column */
+.masthead__inner-wrap,
+.page__footer footer,
+.search-content__inner-wrap {
+  max-width: calc(#{$content-max-width} + 2em);
+
+  @include breakpoint($x-large) {
+    max-width: calc(#{$content-max-width} + 2em);
+  }
+}
+
+.search-content .archive__item {
+  @include breakpoint($large) {
+    width: 100%;
+  }
+}
+
+.page__footer {
+  border-top: 1px solid $color-border;
+}
+
+/* Footer: social links and copyright on one line (wraps only when there is no room) */
+.page__footer footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em 1.5em;
+
+  &::after {
+    display: none;
+  }
+}
+
+::selection {
+  background-color: rgba($color-accent, 0.75);
+  color: $color-accent-foreground;
+}
+
+/* ==========================================================================
+   Titles
+   ========================================================================== */
+
+/* Article titles are orange; other page titles keep the text color */
+.publication .page__title,
+.publication .page__title a {
+  color: $color-accent;
+}
+
+/* The theme shows the front matter title; hide the article's own first H1 on the website only */
+.publication .page__content > h1:first-child {
+  display: none;
+}
+
+/* Article titles in lists: Publications, Tags, and related articles */
+.archive__item-title a {
+  color: $color-accent;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+  }
+}
+
+/* ==========================================================================
+   Article content
+   ========================================================================== */
+
+.page__content {
+  overflow-wrap: break-word;
+
+  a:not(.btn) {
+    color: $color-foreground;
+    @include link-underline;
+  }
+
+  h2 {
+    border-bottom: none;
+  }
+
+  h3 {
+    font-style: italic;
+  }
+
+  li::marker {
+    color: $color-accent;
+  }
+
+  blockquote {
+    border-inline-start-color: rgba($color-accent, 0.8);
+    opacity: 0.8;
+  }
+
+  :not(pre) > code {
+    color: $color-foreground;
+    border-radius: 0.25rem;
+  }
+
+  thead {
+    background-color: transparent;
+    border-bottom: none;
+  }
+
+  th,
+  td {
+    border: 1px solid $color-foreground;
+  }
+}
+
+div.highlighter-rouge,
+figure.highlight {
+  border: 1px solid $color-foreground;
+}
+
+/* Copy button in code blocks: text color, orange on hover */
+pre.highlight .clipboard-copy-button {
+  color: $color-foreground;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-accent;
+  }
+
+  /* Touch screens have no hover, so keep the button clearly visible */
+  @media (hover: none) {
+    opacity: 0.8;
+  }
+}
+
+/* Home page: list numbers in the text color; publication links without underline */
+.home .page__content {
+  li::marker {
+    color: $color-foreground;
+  }
+
+  a:not(.btn) {
+    text-decoration: none;
+  }
+}
+
+/* ==========================================================================
+   Tags
+   ========================================================================== */
+
+.page__taxonomy-item {
+  padding: 0 0.1em;
+  border: 0;
+  border-radius: 0;
+  color: $color-foreground;
+  @include link-underline;
+}

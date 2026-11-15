@@ -13,6 +13,7 @@ twitter:
   username: "vontanne"
 
 theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "dark"
 
 markdown: kramdown
 kramdown:
@@ -22,6 +23,8 @@ permalink: /posts/:title/
 
 search: true
 search_full_content: true
+
+enable_copy_code_button: true
 
 tag_archive:
   type: liquid
@@ -79,3 +82,8 @@ defaults:
       related: true
       read_time: true
       show_date: true
+      classes: publication
+  - scope:
+      path: "README.md"
+    values:
+      classes: home
