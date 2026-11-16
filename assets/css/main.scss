@@ -34,9 +34,29 @@ $masthead-link-color: $color-foreground;
 $masthead-link-color-hover: $color-accent;
 $navicon-link-color-hover: $color-accent;
 
-/* Fonts: Noto Sans for Latin text, Noto Sans Armenian for Armenian text */
-$sans-serif: "Noto Sans", "Noto Sans Armenian", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-$monospace: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+/* Fonts: Google Sans Code (as in AstroPaper) for Latin text and code. It has no Armenian
+   letters, so they come from Hack (same 0.6em letter width), self-hosted in assets/fonts/hack */
+$font-stack: "Google Sans Code", "Hack Armenian", ui-monospace, Menlo, Consolas, monospace;
+$sans-serif: $font-stack;
+$monospace: $font-stack;
+
+/* Text size: 16px at every screen width (the theme grows it up to 22px on wide screens) */
+$doc-font-size: 16px;
+$doc-font-size-medium: 16px;
+$doc-font-size-large: 16px;
+$doc-font-size-x-large: 16px;
+
+/* Hack 3.003, Armenian letters and the dot "․" (U+2024) only; license in assets/fonts/hack */
+@each $style, $weight, $file in (normal, 400, regular), (normal, 700, bold), (italic, 400, italic), (italic, 700, bolditalic) {
+  @font-face {
+    font-family: "Hack Armenian";
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src: url("../fonts/hack/hack-armenian-#{$file}.woff2") format("woff2");
+    unicode-range: U+0531-058F, U+2024;
+  }
+}
 
 /* Code blocks: Night Owl colors */
 $base00: #011627; // background
@@ -167,10 +187,6 @@ $content-max-width: 42rem;
     gap: 0.6em;
   }
 
-  @include breakpoint($large) {
-    font-size: $type-size-6;
-  }
-
   a {
     transition: color 0.15s ease;
 
@@ -219,8 +235,8 @@ $content-max-width: 42rem;
 
   .social-icon {
     display: block;
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 
@@ -288,7 +304,13 @@ $content-max-width: 42rem;
 
   :not(pre) > code {
     color: $color-foreground;
+    font-size: 0.875em;
     border-radius: 0.25rem;
+  }
+
+  /* Tables at 14px like code (the theme uses 12px) */
+  table {
+    font-size: 0.875em;
   }
 
   thead {
@@ -305,6 +327,7 @@ $content-max-width: 42rem;
 div.highlighter-rouge,
 figure.highlight {
   border: 1px solid $color-foreground;
+  font-size: 0.875em;
 }
 
 /* Copy button in code blocks: text color, orange on hover */

@@ -7,7 +7,7 @@
 <div class="page__footer-copyright">
   <span>Copyright &copy; {% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }}&ndash;{% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a></span>
   <span class="page__footer-separator" aria-hidden="true">|</span>
-  <span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a></span>
+  <span><a href="https://github.com/{{ site.repository }}/blob/master/LICENSE" rel="license">CC BY 4.0</a></span>
 </div>
 
 {% if site.footer.links %}
