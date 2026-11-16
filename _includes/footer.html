@@ -1,27 +1,21 @@
-{% assign locale = include.locale | default: site.locale %}
-{% unless site.atom_feed.hide %}
-  {% assign show_atom = true %}
-{% endunless %}
-{% if site.footer.links or show_atom %}
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[locale].follow_label }}</strong></li>
-    {% endif %}
-
-    {% if site.footer.links %}
-      {% for link in site.footer.links %}
-        {% if link.label and link.url %}
-          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer{% if link.rel %} {{ link.rel }}{% endif %}"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label | escape_once | strip }}</a></li>
-        {% endif %}
-      {% endfor %}
-    {% endif %}
-
-    {% unless site.atom_feed.hide %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {{ site.data.ui-text[locale].feed_label | default: "Feed" }}</a></li>
-    {% endunless %}
-  </ul>
+{% comment %}
+  Theme override: copyright on the left, social icons on the right.
+  Icons in _includes/icons/ come from Tabler Icons 3.52.0 (MIT License,
+  Copyright (c) 2020-2026 Paweł Kuna), https://tabler.io/icons
+{% endcomment %}
+{% assign site_time = site.time | date: '%Y' %}
+<div class="page__footer-copyright">
+  <span>Copyright &copy; {% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }}&ndash;{% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a></span>
+  <span class="page__footer-separator" aria-hidden="true">|</span>
+  <span><a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a></span>
 </div>
-{% endif %}
 
-<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>.</div>
+{% if site.footer.links %}
+<ul class="page__footer-social">
+  {% for link in site.footer.links %}
+    {% if link.label and link.url %}
+  <li><a href="{{ link.url }}" title="{{ link.label | escape }}" aria-label="{{ link.label | escape }}" rel="nofollow noopener noreferrer">{% if link.icon %}{% include icons/{{ link.icon }}.svg %}{% else %}{{ link.label | escape }}{% endif %}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endif %}

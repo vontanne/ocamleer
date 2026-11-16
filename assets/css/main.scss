@@ -127,20 +127,100 @@ $content-max-width: 42rem;
   }
 }
 
+/* Footer: copyright on the left, social icons on the right;
+   on narrow screens both are centered, icons above the copyright */
 .page__footer {
   border-top: 1px solid $color-border;
+  color: $color-foreground;
 }
 
-/* Footer: social links and copyright on one line (wraps only when there is no room) */
 .page__footer footer {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column-reverse;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.5em 1.5em;
+  gap: 0.75em;
+  margin-top: 0;
+  padding-block: 1.5em;
+  font-family: $monospace;
+
+  @include breakpoint($small) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5em;
+    padding-block: 1em;
+  }
 
   &::after {
     display: none;
+  }
+}
+
+.page__footer-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: inherit;
+  font-size: 0.875rem;
+
+  @include breakpoint($small) {
+    flex-direction: row;
+    gap: 0.6em;
+  }
+
+  @include breakpoint($large) {
+    font-size: $type-size-6;
+  }
+
+  a {
+    transition: color 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-accent;
+      text-decoration: none;
+    }
+  }
+}
+
+.page__footer-separator {
+  display: none;
+
+  @include breakpoint($small) {
+    display: inline;
+  }
+}
+
+.page__footer-social {
+  display: flex;
+  gap: 0.25em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  /* Align the last icon with the column edge, not its padding */
+  @include breakpoint($small) {
+    margin-inline-end: -0.4rem;
+  }
+
+  a {
+    display: block;
+    padding: 0.4rem;
+    opacity: 0.9;
+    transition: color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: $color-accent;
+      opacity: 1;
+      transform: rotate(6deg);
+      text-decoration: none;
+    }
+  }
+
+  .social-icon {
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
   }
 }
 

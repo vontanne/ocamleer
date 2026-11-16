@@ -32,9 +32,12 @@ tag_archive:
 
 footer:
   since: "2026"
-  links:
+  links: # icon: an SVG file name in _includes/icons/
+    - label: "GitHub"
+      icon: "brand-github"
+      url: "https://github.com/vontanne"
     - label: "X"
-      icon: "fab fa-fw fa-x-twitter"
+      icon: "brand-x"
       url: "https://x.com/vontanne"
 
 atom_feed:
