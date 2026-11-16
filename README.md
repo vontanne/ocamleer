@@ -20,5 +20,5 @@ I hope these publications help you discover OCaml and explore new ways of thinki
 
 ## Publications / Հրապարակումներ
 
-1. [**Ներածություն**](./_posts/2026-11-14-ocaml-introduction.md)
+1. [**OCaml․ Ինքնատիպ հայացք ծրագրավորմանը**](./_posts/2026-11-14-ocaml-introduction.md)
 2. [**Աշխատանքային միջավայրի տեղադրումն ու կարգավորումը**](./_posts/2026-11-15-ocaml-development-environment.md)
