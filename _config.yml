@@ -5,6 +5,7 @@ baseurl: "/ocamleer"
 repository: "vontanne/ocamleer"
 locale: "hy-AM"
 timezone: "Asia/Yerevan"
+og_image_alt: "OCamleer"
 
 author:
   name: "Hovhannes Hovhannisyan"
@@ -77,6 +78,8 @@ defaults:
     values:
       layout: single
       author_profile: false
+      header:
+        og_image: /assets/images/og-image.png # share preview, 1200×630
   - scope:
       path: ""
       type: posts
