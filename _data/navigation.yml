@@ -1,7 +1,7 @@
 main:
-  - title: "Publications"
+  - title: "Հրապարակումներ"
     url: /posts/
-  - title: "Tags"
+  - title: "Թեմաներ"
     url: /tags/
-  - title: "About"
+  - title: "Բլոգի մասին"
     url: /about/

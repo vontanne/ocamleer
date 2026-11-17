@@ -1,5 +1,5 @@
 ---
-title: "Tags"
+title: "Թեմաներ"
 permalink: /tags/
 layout: tags
 ---
