@@ -9,4 +9,5 @@
 1. [**OCaml․ Ինքնատիպ հայացք ծրագրավորմանը**](./_posts/2026-11-14-ocaml-introduction.md)
 2. [**Աշխատանքային միջավայրի տեղադրումն ու կարգավորումը**](./_posts/2026-11-15-ocaml-development-environment.md)
 3. [**Խոսելով OCaml-ի հետ. առաջին քայլերը utop-ում**](./_posts/2026-11-17-ocaml-first-steps-in-utop.md)
-4. [**Արժեքներին անվանում տալը․ փոփոխականների կապակցումը**](./_posts/2026-11-18-ocaml-variable-binding.md)
+4. [**Փոփոխականներ առանց վերագրման**](./_posts/2026-11-18-ocaml-variable-binding.md)
+5. [**Սխալներ և մեկնաբանություններ․ ինչպե՞ս արդյունավետ օգտագործել utop-ը**](./_posts/2026-11-19-ocaml-errors-comments-utop.md)
