@@ -9,11 +9,10 @@ search: false
    Colors: dark theme palette
    ========================================================================== */
 
-$color-background: #212737;
-$color-foreground: #eaedf3;
+$color-background: #121212;
+$color-foreground: #e0e0e0;
 $color-accent: #ff6b01;
 $color-accent-foreground: #ffffff;
-$color-muted: #343f60;
 $color-muted-foreground: #afb9ca;
 $color-border: #ab4b08;
 
@@ -23,7 +22,7 @@ $text-color: $color-foreground;
 $muted-text-color: $color-muted-foreground;
 $primary-color: $color-accent;
 $border-color: $color-border;
-$code-background-color: #2f3956; // $color-muted at 75% opacity over $color-background
+$code-background-color: #262626; // inline code: neutral grey, a step lighter than code blocks
 $code-background-color-dark: $code-background-color;
 $form-background-color: $code-background-color;
 $footer-background-color: $color-background;
@@ -58,23 +57,23 @@ $doc-font-size-x-large: 16px;
   }
 }
 
-/* Code blocks: Night Owl colors */
-$base00: #011627; // background
-$base01: #0b2942;
-$base02: #1d3b53;
-$base03: #4b6479;
-$base04: #637777; // comments, line numbers
-$base05: #d6deeb; // default text
-$base06: #1d3b53; // highlighted line background
-$base07: #ffffff;
-$base08: #c5e478; // variables
-$base09: #f78c6c; // numbers, constants
-$base0a: #ffcb8b; // types, classes
-$base0b: #ecc48d; // strings
-$base0c: #7fdbca; // operators, tags
-$base0d: #82aaff; // functions
-$base0e: #c792ea; // keywords
-$base0f: #ff5874;
+/* Code blocks: Kanagawa Dragon colors, with a neutral background and lighter comments */
+$base00: #1e1e1e; // background
+$base01: #1d1c19;
+$base02: #282727;
+$base03: #625e5a;
+$base04: #818981; // comments, line numbers
+$base05: #c5c9c5; // default text
+$base06: #282727; // highlighted line background
+$base07: #c8c093;
+$base08: #c4b28a; // variables
+$base09: #a292a3; // numbers, constants
+$base0a: #8ea4a2; // types, classes
+$base0b: #8a9a7b; // strings
+$base0c: #c4746e; // operators, tags
+$base0d: #8ba4b0; // functions
+$base0e: #8992a7; // keywords
+$base0f: #c4746e;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
@@ -326,7 +325,6 @@ $content-max-width: 42rem;
 
 div.highlighter-rouge,
 figure.highlight {
-  border: 1px solid $color-foreground;
   font-size: 0.875em;
 }
 
