@@ -1,0 +1,24 @@
+name: Article error
+description: Report a typo, a wrong fact, a broken code example, or an outdated version in an article.
+labels: [documentation]
+body:
+  - type: input
+    id: article
+    attributes:
+      label: Article
+      description: The link to the article or its title.
+      placeholder: https://vontanne.github.io/ocamleer/posts/...
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Quote the text or code and explain the problem. For a code example, include what you typed, what you got, and your OCaml version (`ocaml -version`). Please write in English.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Suggested fix
+      description: The correct text, or a source that supports the fix.

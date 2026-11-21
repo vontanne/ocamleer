@@ -1,0 +1,24 @@
+name: Site problem
+description: Report a broken layout, a broken link, or another problem with the website.
+labels: [bug]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The link to the page with the problem.
+      placeholder: https://vontanne.github.io/ocamleer/
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: What you expected, what you saw instead, and how to see it again. You can paste screenshots here. Please write in English.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      placeholder: Firefox on an Android phone
