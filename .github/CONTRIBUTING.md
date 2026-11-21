@@ -2,7 +2,7 @@
 
 Thank you for helping to improve OCamleer. It is a personal blog, so only corrections to articles and fixes to the site are accepted. Please write issues and pull requests in English.
 
-Everyone who takes part agrees to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+Everyone who takes part agrees to follow the [Code of Conduct](https://github.com/vontanne/ocamleer/blob/master/.github/CODE_OF_CONDUCT.md).
 
 ## Reporting a problem
 
@@ -10,7 +10,7 @@ Before opening an issue, check whether someone has already reported it.
 
 - **An error in an article**, such as a typo, a wrong fact, or a code example that doesn't work: use the "Article error" form.
 - **A problem with the site**, such as a broken layout or link: use the "Site problem" form.
-- **A security problem**: don't open an issue; follow the [security policy](SECURITY.md).
+- **A security problem**: don't open an issue; follow the [security policy](https://github.com/vontanne/ocamleer/blob/master/.github/SECURITY.md).
 
 ## Proposing a fix
 
@@ -20,4 +20,4 @@ Before opening an issue, check whether someone has already reported it.
 
 ## License
 
-The blog is published under the [CC BY 4.0](../LICENSE) license. By contributing, you agree that your contribution is published under the same license.
+The blog is published under the [CC BY 4.0](https://github.com/vontanne/ocamleer/blob/master/LICENSE) license. By contributing, you agree that your contribution is published under the same license.
