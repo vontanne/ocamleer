@@ -1,0 +1,67 @@
+title: OCamleer
+description: "An Armenian-language OCaml tutorial, covering core concepts, history, and interesting aspects of the language"
+url: "https://vontanne.github.io"
+baseurl: "/ocamleer"
+locale: "hy-AM"
+timezone: "Asia/Yerevan"
+
+author:
+  name: "Hovhannes Hovhannisyan"
+
+twitter:
+  username: "vontanne"
+
+social:
+  name: "Hovhannes Hovhannisyan"
+  links:
+    - "https://github.com/vontanne"
+    - "https://x.com/vontanne"
+
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "dark"
+
+footer:
+  since: "2026"
+  links:
+    - label: "GitHub"
+      url: "https://github.com/vontanne"
+    - label: "X"
+      url: "https://x.com/vontanne"
+
+atom_feed:
+  hide: true
+
+copyright_url: "https://vontanne.github.io/ocamleer/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-readme-index
+  - jekyll-relative-links
+  - jekyll-sitemap
+
+readme_index:
+  remove_originals: true
+
+include:
+  - _pages
+
+exclude:
+  - LICENSE
+  - vendor/
+
+sass:
+  style: compressed
+  quiet_deps: true
+  silence_deprecations: ["import"]
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      author_profile: false
+  - scope:
+      path: "README.md"
+    values:
+      excerpt: "Հայերեն հոդվածներ OCaml ծրագրավորման լեզվի և ֆունկցիոնալ ծրագրավորման մասին՝ լեզվի հիմունքներից մինչև բարդ թեմաներ, քայլ առ քայլ և օրինակներով։"

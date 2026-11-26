@@ -1,0 +1,7 @@
+main:
+  - title: "Հոդվածներ"
+    url: /posts/
+  - title: "Թեգեր"
+    url: /tags/
+  - title: "Ուղեցույցի մասին"
+    url: /about/
