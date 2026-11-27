@@ -20,6 +20,8 @@ social:
 theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "dark"
 
+permalink: /posts/:title/
+
 footer:
   since: "2026"
   links:
