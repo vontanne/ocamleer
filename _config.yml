@@ -2,8 +2,11 @@ title: OCamleer
 description: "An Armenian-language OCaml tutorial, covering core concepts, history, and interesting aspects of the language"
 url: "https://vontanne.github.io"
 baseurl: "/ocamleer"
+repository: "vontanne/ocamleer"
 locale: "hy-AM"
 timezone: "Asia/Yerevan"
+logo: "/assets/images/favicon.svg"
+og_image_alt: "OCamleer"
 
 author:
   name: "Hovhannes Hovhannisyan"
@@ -22,12 +25,23 @@ minimal_mistakes_skin: "dark"
 
 permalink: /posts/:title/
 
+search: true
+search_full_content: true
+
+enable_copy_code_button: true
+
+tag_archive:
+  type: liquid
+  path: /tags/
+
 footer:
   since: "2026"
   links:
     - label: "GitHub"
+      icon: "brand-github"
       url: "https://github.com/vontanne"
     - label: "X"
+      icon: "brand-x"
       url: "https://x.com/vontanne"
 
 atom_feed:
@@ -44,6 +58,9 @@ plugins:
 
 readme_index:
   remove_originals: true
+
+relative_links:
+  collections: true
 
 include:
   - _pages
@@ -63,7 +80,19 @@ defaults:
     values:
       layout: single
       author_profile: false
+      header:
+        og_image: /assets/images/og-image.png
+  - scope:
+      path: ""
+      type: posts
+    values:
+      share: true
+      related: true
+      read_time: true
+      show_date: true
+      classes: publication
   - scope:
       path: "README.md"
     values:
+      classes: home
       excerpt: "Հայերեն հոդվածներ OCaml ծրագրավորման լեզվի և ֆունկցիոնալ ծրագրավորման մասին՝ լեզվի հիմունքներից մինչև բարդ թեմաներ, քայլ առ քայլ և օրինակներով։"

@@ -1,0 +1,20 @@
+{% comment %}
+  Icons in _includes/icons/ come from Tabler Icons 3.52.0 (MIT License,
+  Copyright (c) 2020-2026 Paweł Kuna), https://tabler.io/icons
+{% endcomment %}
+{% assign site_time = site.time | date: '%Y' %}
+<div class="page__footer-copyright">
+  <span>Copyright &copy; {% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }}&ndash;{% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a></span>
+  <span class="page__footer-separator" aria-hidden="true">|</span>
+  <span><a href="https://github.com/{{ site.repository }}/blob/master/LICENSE" rel="license">CC BY 4.0</a></span>
+</div>
+
+{% if site.footer.links %}
+<ul class="page__footer-social">
+  {% for link in site.footer.links %}
+    {% if link.label and link.url %}
+  <li><a href="{{ link.url }}" title="{{ link.label | escape }}" aria-label="{{ link.label | escape }}" rel="nofollow noopener noreferrer">{% include icons/{{ link.icon }}.svg %}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+{% endif %}

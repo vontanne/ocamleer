@@ -1,0 +1,274 @@
+---
+---
+
+@use "sass:color";
+
+$accent: #ec670f;
+
+$background-color: #252a34;
+$text-color: #eaeaea;
+$primary-color: $accent;
+$footer-background-color: $background-color;
+$link-color: $accent;
+$link-color-hover: $text-color;
+$link-color-visited: $accent;
+$masthead-link-color-hover: $accent;
+$navicon-link-color-hover: $text-color;
+
+$sans-serif: "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+$monospace: "Google Sans Code", "Google Sans", ui-monospace, monospace;
+$caption-font-family: $sans-serif;
+
+$base00: #1e1e1e;
+$base01: #1d1c19;
+$base02: #282727;
+$base03: #625e5a;
+$base04: #818981;
+$base05: #c5c9c5;
+$base06: #282727;
+$base07: #c8c093;
+$base08: #c4b28a;
+$base09: #a292a3;
+$base0a: #8ea4a2;
+$base0b: #8a9a7b;
+$base0c: #c4746e;
+$base0d: #8ba4b0;
+$base0e: #8992a7;
+$base0f: #c4746e;
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+$content-max-width: 42rem;
+
+@mixin link-underline {
+  text-decoration: underline;
+  text-decoration-color: rgba($text-color, 0.5);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: $accent;
+    text-decoration: underline;
+    text-decoration-color: $accent;
+  }
+}
+
+.page,
+.archive {
+  @include breakpoint($large) {
+    float: none;
+    width: 100%;
+    max-width: $content-max-width;
+    margin-inline: auto;
+    padding-inline: 0;
+  }
+}
+
+.page__related {
+  float: none;
+  width: 100%;
+  border-top-color: $accent;
+
+  @include breakpoint($large) {
+    max-width: $content-max-width;
+    margin-inline: auto;
+  }
+
+  .grid__item {
+    float: none;
+    width: 100%;
+    margin-inline: 0;
+  }
+}
+
+.masthead__inner-wrap,
+.page__footer footer,
+.search-content__inner-wrap {
+  max-width: calc(#{$content-max-width} + 2em);
+}
+
+.search-content .archive__item {
+  @include breakpoint($large) {
+    width: 100%;
+  }
+}
+
+.masthead {
+  border-bottom: 0;
+}
+
+.greedy-nav {
+  .site-title {
+    color: $accent;
+
+    &:hover {
+      color: $text-color;
+    }
+  }
+
+  .visible-links a::before {
+    display: none;
+  }
+
+  .hidden-links a:hover {
+    color: $accent;
+    background: color.mix(#000, $background-color, 20%);
+  }
+}
+
+hr {
+  border-top-color: $accent;
+}
+
+.page__footer {
+  border-top: 1px solid $accent;
+  color: $text-color;
+}
+
+.page__footer footer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 0.75em;
+  margin-top: 0;
+  padding-block: 1.5em;
+
+  @include breakpoint($small) {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5em;
+    padding-block: 1em;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+.page__footer-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.875rem;
+
+  @include breakpoint($small) {
+    flex-direction: row;
+    gap: 0.6em;
+  }
+
+  a {
+    transition: color 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: $accent;
+      text-decoration: none;
+    }
+  }
+}
+
+.page__footer-separator {
+  display: none;
+
+  @include breakpoint($small) {
+    display: inline;
+  }
+}
+
+.page__footer-social {
+  display: flex;
+  gap: 0.25em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include breakpoint($small) {
+    margin-inline-end: -0.4rem;
+  }
+
+  a {
+    display: block;
+    padding: 0.4rem;
+    opacity: 0.9;
+    transition: color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: $accent;
+      opacity: 1;
+      transform: rotate(6deg);
+      text-decoration: none;
+    }
+  }
+
+  .social-icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+::selection {
+  background-color: rgba($accent, 0.75);
+  color: #fff;
+}
+
+.publication .page__title,
+.publication .page__title a {
+  color: $accent;
+}
+
+.publication .page__content > h1:first-child {
+  display: none;
+}
+
+.archive__item-title a {
+  color: $accent;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: $text-color;
+  }
+}
+
+.page__content {
+  a:not(.btn) {
+    color: $text-color;
+    @include link-underline;
+  }
+
+  h2 {
+    border-bottom: none;
+  }
+
+  li::marker {
+    color: $accent;
+  }
+}
+
+pre.highlight .clipboard-copy-button {
+  color: $text-color;
+
+  &:hover,
+  &:focus-visible {
+    color: $accent;
+  }
+
+  @media (hover: none) {
+    opacity: 0.8;
+  }
+}
+
+.home .page__content {
+  li::marker {
+    color: $text-color;
+  }
+
+  a:not(.btn) {
+    text-decoration: none;
+  }
+}
